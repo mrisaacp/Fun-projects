@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Adding Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>➕ Fun Adding Game ➕</h1>
+
+    <!-- Setup screen -->
+    <section id="setup">
+      <label for="playerName" class="label">What's your name?</label>
+      <input id="playerName" type="text" maxlength="20" placeholder="Type your name" autocomplete="off">
+
+      <p class="label">Pick a level:</p>
+      <div class="levels">
+        <button class="level" data-level="easiest">🐣<br>Easiest<br><small>numbers up to 5</small></button>
+        <button class="level" data-level="easy">🐢<br>Easy<br><small>answers up to 20</small></button>
+        <button class="level" data-level="medium">🚀<br>Medium<br><small>answers under 50</small></button>
+      </div>
+      <p id="setupMsg" class="msg"></p>
+    </section>
+
+    <!-- Game screen -->
+    <section id="game" class="hidden">
+      <p id="greeting" class="greeting"></p>
+      <div id="stars" class="stars" aria-label="Streak"></div>
+
+      <div class="problem">
+        <span id="num1">0</span>
+        <span>+</span>
+        <span id="num2">0</span>
+        <span>=</span>
+        <input id="answer" type="number" inputmode="numeric" min="0" aria-label="Your answer">
+      </div>
+
+      <button id="checkBtn" class="big">Check!</button>
+      <p id="feedback" class="msg"></p>
+      <button id="changeBtn" class="link">Change level or player</button>
+    </section>
+
+    <!-- Win screen -->
+    <section id="win" class="hidden">
+      <div class="trophy">🏆</div>
+      <h2 id="winMsg"></h2>
+      <p>You got 5 in a row right!</p>
+      <button id="playAgainBtn" class="big">Play Again</button>
+      <button id="winChangeBtn" class="link">Change level or player</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
